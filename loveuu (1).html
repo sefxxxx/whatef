@@ -1,0 +1,67 @@
+<html>
+ <head></head>
+ <body>
+  html 
+  <script>
+        function showNextText() {
+            document.getElementById("secondText").style.display = "block";
+        }
+        
+        function showNextText2() {
+            document.getElementById("thirdText").style.display = "block";
+        }
+        
+        function showNextText3() {
+            document.getElementById("fourthText").style.display = "block";
+        }
+        
+        function showNextText4() {
+            document.getElementById("fifthText").style.display = "block";
+        }
+        
+        function showOptions() {
+            document.getElementById("options").style.display = "block";
+        }
+        
+        function showResult(option) {
+            if (option === "yes") {
+                document.getElementById("result").innerHTML = "Yaay!";
+                
+                var img = document.createElement("img");
+                img.src = "IMG_20230623_224009.jpg";
+                document.getElementById("imageContainer").appendChild(img);
+            } else {
+                var noButton = document.getElementById("no");
+                noButton.style.left = Math.floor(Math.random() * 400) + "px";
+                noButton.style.top = Math.floor(Math.random() * 200) + "px";
+            }
+        }
+    </script> 
+  <style>
+        .text {
+            display: none;
+        }
+        
+        #no {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            transition: left 0.5s, top 0.5s;
+        }
+    </style> 
+  <h1>Pumayag ka kaya</h1> 
+  <p id="firstText">halooo</p> <button onclick="showNextText()">OK</button> 
+  <p id="secondText" class="text">what if..</p> <button onclick="showNextText2()">OK</button> 
+  <p id="thirdText" class="text">what if lagyan na natin ng label?</p> <button onclick="showNextText3()">OK</button> 
+  <p id="fourthText" class="text">payag ka ba? payag nga ako eh</p> <button onclick="showNextText4()">OK</button> 
+  <p id="fifthText" class="text">yes or no?</p> <button onclick="showOptions()">OK</button> 
+  <div id="options" style="display: none;"> <button onclick="showResult('yes')">Yes</button> <button onclick="showResult('no')" id="no">No</button> 
+  </div> 
+  <p id="result"></p> 
+  <div id="imageContainer">
+   <!--
+
+    -->
+  </div>
+ 
+</body></html>
